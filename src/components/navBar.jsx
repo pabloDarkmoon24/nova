@@ -14,9 +14,9 @@ function Navbar() {
             </div>
             <div className="col-6 navbar-menu-wrapper" style={{ display: 'flex', justifyContent: 'center' }}>
                 <ul className="navbar-menu">
-                <li><Link to="/">Inicio</Link></li>
-                <li><Link to="/manuales">Manuales / Ayuda</Link></li>
-                <li><Link to="/contacto">Contactamos</Link></li>
+                <li><Link to="nova/">Inicio</Link></li>
+                <li><Link to="nova/manuales">Manuales / Ayuda</Link></li>
+                <li><Link to="nova/contacto">Contactamos</Link></li>
                 </ul>
             </div>
             <div className="col-3 navbar-right" style={{ display: 'flex', justifyContent: 'flex-end' }}>
