@@ -1,0 +1,81 @@
+.seccion-gestion {
+  background: url('../assets/bot/BG-morado.png') no-repeat center center/cover;
+  padding: 0px 0 50px 0;
+  width: 100%;
+}
+
+.seccion-gestion-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.seccion-gestion-imgbox.imgbox-izq {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.seccion-gestion-imgbox.imgbox-der {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.img-mano-celular {
+  max-width: 450px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.img-laptop-nube {
+ max-width: 420px;
+  width: 100%;
+  margin-bottom: 12px;
+}
+.gestion-texto-izq {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;      /* Alinea todo a la derecha */
+  text-align: left;          /* El texto queda a la derecha */
+  color: #000;                /* O el color que prefieras */
+  max-width: 400px;
+  width: 100%;
+  margin-left: 150px;
+  
+}
+
+.gestion-texto-der {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;    /* Alinea todo a la izquierda */
+  text-align: left;           /* El texto queda a la izquierda */
+  color: #fff;
+  max-width: 410px;
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+}
+
+.gestion-titulo {
+  font-family: 'MONT-BOLD';
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.gestion-desc {
+  font-family: 'MONT-REGULAR';
+  font-size: 25px;
+  line-height: 1.26;
+  color: #fff;
+}
+
+
+
+

@@ -1,0 +1,105 @@
+.problemas-sector {
+  width: 100%;
+  background: #ffffff;
+  padding: 15px 0 32px 0;
+}
+
+.problemas-title {
+  color: #181829;
+  font-weight: 800;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 2px;      
+  line-height: 1.05;  
+  font-family: 'MONT-BOLD';    
+}
+
+.problemas-subtitle {
+  color: #222;
+  font-size: 35px;
+  margin-bottom: 10px;     
+  text-align: center;
+  line-height: 1.12;   
+  font-family: 'MONT-REGULAR';    
+}
+
+.main-content-row {
+  align-items: center;
+  margin-top: 18px;
+  margin-bottom: 38px;
+  display: flex; 
+}
+
+.col-5, .col-7 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pc-area {
+  display: flex;
+  justify-content: flex-end;  
+  align-items: flex-end;       
+}
+
+.pc-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin-left: 0;             
+}
+
+.problemas-morado-area {
+  display: flex;
+  justify-content: flex-end;  
+  align-items: flex-end;  
+}
+
+.problemas-img-morado {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+}
+
+.marcas-row {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+
+.marcas-subtitle {
+  font-size: 35px;
+  color: #222;
+  text-align: center;
+  font-family: 'MONT-REGULAR';
+}
+
+.marcas-bar {
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+
+.marcas-fibra, .marcas-radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.barra-fibra, .barra-radio {
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #ffb70022;
+}
+
+.logo-marca {
+  height: 80px;
+  margin: 0 7px;
+  vertical-align: middle;
+  background: transparent;
+  object-fit: contain;
+}
+
