@@ -4,7 +4,7 @@ import logoNova from '../assets/footer/Logo-NOVA.png'; // Cambia la ruta si es n
 export function Footer() {
 return (
     <>
-      {/* SoporteBox: Encima del footer */}
+      
       <div className="soporte-box-absolute">
         <div className="soporte-box">
           <div className="soporte-box-left">
@@ -13,7 +13,17 @@ return (
             </span>
           </div>
           <div className="soporte-box-right">
-            <div className="soporte-box-phone">+57 320 500 5001</div>
+            <a
+            href="https://wa.me/573205005001"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="soporte-box-phone-link"
+            title="Escríbenos por WhatsApp"
+          >
+            <div className="soporte-box-phone">
+              +57 320 500 5001
+            </div>
+          </a>
             <div className="soporte-box-link">Preguntas frecuentes</div>
           </div>
         </div>

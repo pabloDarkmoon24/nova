@@ -9,12 +9,12 @@
   gap: 18px 32px;
   justify-content: center;
   margin: 0 auto 18px auto;
-  max-width: 800px;   
+  max-width: 800px;
 }
 
 .carta img {
   width: 100%;
-  max-width: 500px;    
+  max-width: 500px;
   display: block;
   margin: 0 auto;
   transition: transform 0.23s cubic-bezier(.33,.74,.54,1.17);
@@ -23,7 +23,7 @@
 }
 
 .carta img:hover {
-  transform: scale(1) translateY(-12px);
+  transform: scale(1.08) translateY(-12px);
   z-index: 2;
 }
 
@@ -39,8 +39,8 @@
   text-align: center;
   margin: 15px auto 20px auto;
   display: block;
-  max-width: 700px; 
-  width: 100%;       
+  max-width: 700px;
+  width: 100%;
 }
 
 .info-blanca {
@@ -60,25 +60,18 @@
 
 .x-left, .x-right {
   position: absolute;
-  top: 18px;             /* Ajusta para que flote fuera */
-  width: 70px;            /* O el tamaño que necesites */
+  top: 18px;
+  width: 70px;
   height: 70px;
   z-index: 3;
 }
-
-.x-left {
-  left: -35px;           /* Ajusta hasta que quede justo como en tu imagen */
-}
-
-.x-right {
-  right: -35px;
-}
+.x-left { left: -35px; }
+.x-right { right: -35px; }
 
 .info-blanca-content {
   width: 100%;
   padding: 0 12px;
 }
-
 .info-blanca-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -90,9 +83,8 @@
   padding: 0 8px;
   text-align: center;
 }
-
 .recuadro-title {
-  font-family: 'MONT-BOLD'; 
+  font-family: 'MONT-BOLD';
   font-weight: 700;
   font-size: 25px;
   margin-bottom: 4px;
@@ -105,17 +97,16 @@
   font-weight: 400;
   text-align: center;
 }
-
 .recuadro.abajo {
   grid-column: 1 / 3;
   margin-top: 8px;
   font-size: 20px;
 }
 
-
 .celular-row {
   margin-top: 20px;
   align-items: center;
+  display: flex;
 }
 .celular-title {
   color: #ffffff;
@@ -123,7 +114,6 @@
   font-weight: 700;
   margin-bottom: 10px;
   margin-left: 180px;
-
 }
 .celular-list {
   color: #fff;
@@ -138,22 +128,119 @@
   align-items: start;
 }
 
-@media (max-width: 900px) {
-  .cartas-row .col-3, .celular-row .col-6 {
-    width: 100%;
-    max-width: 100%;
-    flex: 1 1 100%;
+/* Tablets (max 990px): ajusta grids, cartas, texto y recuadros */
+@media (max-width: 990px) {
+  .datos-impacto-section {
+    padding: 80px 0 24px 0;
+    background-size: cover;
+  }
+  .cartas-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    gap: 13px 0;
+  }
+  .carta img {
+    max-width: 340px;
+    border-radius: 11px;
+  }
+  .cartas-info-text {
+    font-size: 19px;
+    padding: 7px 9px;
+    max-width: 400px;
   }
   .info-blanca {
+    padding: 20px 10px 12px 10px;
+    max-width: 430px;
+    min-width: 0;
+  }
+  .x-left, .x-right {
+    top: 7px;
+    width: 36px;
+    height: 36px;
+  }
+  .x-left { left: -18px; }
+  .x-right { right: -18px; }
+  .info-blanca-content {
+    padding: 0 4px;
+  }
+  .info-blanca-grid {
+    gap: 6px 12px;
+  }
+  .recuadro-title {
+    font-size: 16px;
+  }
+  .recuadro-text, .recuadro.abajo {
+    font-size: 12px;
+  }
+  .celular-row {
     flex-direction: column;
-    padding: 18px 10px 10px 10px;
+    margin-top: 15px;
+    align-items: stretch;
+  }
+  .celular-title, .celular-list {
+    margin-left: 0;
+    font-size: 16px;
+    padding-left: 2px;
+  }
+  .celular-img img {
+    max-width: 230px;
+    margin: 0 auto;
+  }
+}
+
+/* MOBILE - reduce paddings, fuentes, layout */
+@media (max-width: 600px) {
+  .datos-impacto-section {
+    padding: 38px 0 14px 0;
+    background-size: 300%;
+  }
+  .cartas-info-text {
+    font-size: 12px;
+    padding: 4px 4px;
+    max-width: 94vw;
+  }
+  .carta img {
     max-width: 98vw;
   }
+  .info-blanca {
+    padding: 7px 1vw 7px 1vw;
+    max-width: 99vw;
+    min-width: 0;
+  }
+  .x-left, .x-right {
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    left: -9px;
+    right: -9px;
+  }
   .info-blanca-content {
-    padding: 0 2px;
-    text-align: center;
+    padding: 0 1px;
+  }
+  .info-blanca-grid {
+    gap: 2px 2px;
+    grid-template-columns: 1fr;
+  }
+  .recuadro-title, .recuadro-text, .recuadro.abajo {
+    font-size: 10px;
+  }
+  .celular-row {
+    flex-direction: column;
+    align-items: stretch;
+    margin-top: 8px;
+  }
+  .celular-title {
+    font-size: 13px;
+    margin-bottom: 6px;
+    margin-left: 0;
+  }
+  .celular-list {
+    font-size: 10px;
+    margin-left: 0;
+    padding-left: 4px;
   }
   .celular-img img {
     max-width: 80vw;
+    margin: 0 auto;
   }
 }

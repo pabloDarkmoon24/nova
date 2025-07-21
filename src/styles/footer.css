@@ -69,6 +69,32 @@
   font-size: 18px;
 }
 
+.soporte-box-phone-link {
+  text-decoration: none;
+  display: inline-block; /* Para que no rompa el layout */
+}
+
+.soporte-box-phone {
+  padding: 9px 28px 9px 24px;
+  border-radius: 28px;
+  background: linear-gradient(90deg, #a359db 0%, #fd536b 60%, #ffb700 100%);
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  box-shadow: 0 4px 28px #ff3e9944;
+  display: inline-block;
+  letter-spacing: 1px;
+  transition: filter 0.16s, box-shadow 0.22s;
+  cursor: pointer;
+}
+
+.soporte-box-phone-link:hover .soporte-box-phone,
+.soporte-box-phone:hover {
+  filter: brightness(1.15) drop-shadow(0 0 8px #ffb700);
+  box-shadow: 0 0 18px #a359db, 0 4px 28px #fd536b;
+  text-decoration: underline;
+}
 /* SOPORTE BOX */
 .soporte-box-absolute {
   width: 100%;

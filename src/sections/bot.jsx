@@ -9,7 +9,7 @@ export function Bot() {
                 <div className="row align-items-center">
                 <div className="col-6 seccion-gestion-col">
                     <div className="seccion-gestion-imgbox imgbox-izq">
-                    <img src={imgManoCelular} alt="" className="mano-celular" />
+                    <img src={imgManoCelular} alt="" className="img-mano-celular" />
                     </div>
                     <div className="seccion-gestion-texto gestion-texto-izq">
                     <div className="gestion-titulo">
