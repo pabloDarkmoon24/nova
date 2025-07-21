@@ -1,64 +1,61 @@
 .seccion-gestion {
   background: url('../assets/bot/BG-morado.png') no-repeat center center/cover;
-  padding: 0px 0 50px 0;
+  padding: 0 0 50px 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
+/* FLEX ROW SIEMPRE HASTA CELULAR PEQUEÑO */
 .seccion-gestion-col {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  gap: 32px;
+  align-items: stretch;    /* Ambos lados ocupan mismo alto */
+  justify-content: center;
+  width: 100%;
+}
+
+/* Ajusta los contenedores para que no se achiquen demasiado */
+.seccion-gestion-imgbox.imgbox-izq,
+.seccion-gestion-imgbox.imgbox-der {
+  width: 45%;       /* Un poco menos de 50% para dar espacio al texto */
+  display: flex;
   align-items: center;
   justify-content: flex-end;
+  min-width: 180px;
+}
+.seccion-gestion-imgbox.imgbox-der { justify-content: flex-start; }
+
+.gestion-texto-izq, .gestion-texto-der {
+  width: 55%;
+  min-width: 220px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 24px;
 }
 
-
-.seccion-gestion-imgbox.imgbox-izq {
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
+.gestion-texto-izq {
+  align-items: flex-start;
+  text-align: left;
+  color: #000;
 }
-
-.seccion-gestion-imgbox.imgbox-der {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
+.gestion-texto-der {
+  align-items: flex-start;
+  text-align: left;
+  color: #fff;
 }
 
 .img-mano-celular {
-  max-width: 450px;
+  max-width: 370px;
   width: 100%;
   margin-bottom: 12px;
 }
-
 .img-laptop-nube {
- max-width: 420px;
+  max-width: 340px;
   width: 100%;
   margin-bottom: 12px;
-}
-.gestion-texto-izq {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;      /* Alinea todo a la derecha */
-  text-align: left;          /* El texto queda a la derecha */
-  color: #000;                /* O el color que prefieras */
-  max-width: 400px;
-  width: 100%;
-  margin-left: 150px;
-  
-}
-
-.gestion-texto-der {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;    /* Alinea todo a la izquierda */
-  text-align: left;           /* El texto queda a la izquierda */
-  color: #fff;
-  max-width: 410px;
-  width: 100%;
-  margin-left: 0px;
-  margin-right: 100px;
-  margin-bottom: 50px;
 }
 
 .gestion-titulo {
@@ -68,7 +65,6 @@
   margin-bottom: 8px;
   color: #fff;
 }
-
 .gestion-desc {
   font-family: 'MONT-REGULAR';
   font-size: 25px;
@@ -76,6 +72,31 @@
   color: #fff;
 }
 
+/* ----------- TABLET ----------- */
+@media (max-width: 1000px) {
+  .seccion-gestion-col { gap: 12px; }
+  .seccion-gestion-imgbox.imgbox-izq,
+  .seccion-gestion-imgbox.imgbox-der { width: 42%; min-width: 140px; }
+  .gestion-texto-izq, .gestion-texto-der {
+    width: 58%;
+    max-width: 370px;
+    min-width: 120px;
+    padding: 0 8px;
+  }
+  .img-mano-celular, .img-laptop-nube { max-width: 180px; }
+  .gestion-titulo { font-size: 18px; }
+  .gestion-desc { font-size: 13px; }
+}
+
+
+@media (max-width: 700px) {
+  .seccion-gestion-imgbox.imgbox-izq,
+  .seccion-gestion-imgbox.imgbox-der { width: 40%; min-width: 80px;margin-top: 10px}
+  .gestion-texto-izq, .gestion-texto-der { width: 62%; max-width: 100%; margin-top: 20px}
+  .img-mano-celular, .img-laptop-nube { max-width: 150px; }
+  .gestion-titulo { font-size: 12px }
+  .gestion-desc { font-size: 9px; }
+}
 
 
 

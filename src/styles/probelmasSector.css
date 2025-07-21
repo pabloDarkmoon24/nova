@@ -104,7 +104,7 @@
   object-fit: contain;
 }
 
-/* ------- Responsive Tablets y mobile -------- */
+
 @media (max-width: 990px) {
   .problemas-title {
     font-size: 30px;
@@ -148,13 +148,13 @@
   }
 }
 
-/* ------ Mobile < 600px ------ */
+
 @media (max-width: 600px) {
   .problemas-sector { padding: 10px 0 22px 0; }
-  .problemas-title { font-size: 22px; }
-  .problemas-subtitle { font-size: 13px; }
-  .pc-img, .problemas-img-morado { max-width: 210px; }
-  .logo-marca, .barra-fibra, .barra-radio { height: 24px; max-width: 40px; }
+  .problemas-title { font-size: 25px; }
+  .problemas-subtitle { font-size: 12px; }
+  .pc-img, .problemas-img-morado { max-width: 300px; }
+  .logo-marca, .barra-fibra, .barra-radio { height: 30px; max-width: 55px; }
   .marcas-row { margin-top: 0; margin-bottom: 0; }
   .marcas-bar { margin: 5px 0; }
 }

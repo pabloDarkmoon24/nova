@@ -83,3 +83,29 @@
   box-shadow: 0 8px 26px #d124e4;
 }
 
+
+@media (max-width: 1100px) {
+  .hacer-nova-title {
+    font-size: 30px;
+  }
+  .hacer-nova-subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .hacer-nova-card-col {
+    width: 100%;
+    max-width: 340px;
+    gap: 12px;
+  }
+  .hacer-nova-card {
+    width: 100%;
+    max-width: 320px;
+  }
+  .btn-prueba-img {
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+
+

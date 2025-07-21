@@ -1,3 +1,4 @@
+/* --- BASE: Tu estilo original, mantén esto --- */
 .seccion-mensajes {
   padding: 38px 0 0 0;
   background: #fff;
@@ -44,7 +45,6 @@
   margin-right: 144px;
 }
 
-
 .mensajes-card-img {
   display: block;
   margin-left: auto;
@@ -53,7 +53,6 @@
   width: 100%;
   margin-bottom: 12px;
 }
-
 
 .demo-img-box {
   margin-top: 38px;
@@ -66,4 +65,51 @@
   display: block;
 }
 
+/* --- RESPONSIVE --- */
 
+/* Tablets */
+@media (max-width: 1100px) {
+  .mensajes-titulo,
+  .mensajes-desc {
+    margin-left: 40px;
+    font-size: 22px;
+  }
+  .mensajes-desc { font-size: 15px; }
+  .mensajes-pc-img { margin-right: 30px; max-width: 330px; }
+}
+
+/* Móvil: todo columna, centrado y sin márgenes */
+@media (max-width: 700px) {
+  .mensajes-textos {
+    align-items: center;
+    padding-right: 0;
+    gap: 12px;
+  }
+  .mensajes-titulo{
+    margin-left: 0;
+    text-align: center;
+    font-size: 23px;
+  }
+  .mensajes-desc {
+    margin-left: 0;
+    text-align: center;
+    font-size: 13px;
+  }
+  .mensajes-pc-img-area {
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    
+  }
+  .mensajes-pc-img {
+    margin: 14px auto 0 auto;
+    max-width: 70%;
+    display: block;
+  }
+  .mensajes-card-img {
+    max-width: 99vw;
+    margin-bottom: 8px;
+  }
+  .demo-img-box { margin-top: 20px; }
+  .demo-img { max-width: 99vw; }
+}

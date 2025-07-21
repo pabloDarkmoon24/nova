@@ -1,3 +1,4 @@
+/* ----------- DESKTOP Y TABLET (dos columnas) ----------- */
 .datos-impacto-section {
   background: url('../assets/datosImpacto/BG-NOVA-digital.png') top center/cover no-repeat #ffffff;
   padding: 200px 0 38px 0;
@@ -21,7 +22,6 @@
   border-radius: 14px;
   cursor: pointer;
 }
-
 .carta img:hover {
   transform: scale(1.08) translateY(-12px);
   z-index: 2;
@@ -43,6 +43,7 @@
   width: 100%;
 }
 
+/* ----------- INFO BLANCA ----------- */
 .info-blanca {
   font-family: 'MONT-REGULAR';
   position: relative;
@@ -52,12 +53,13 @@
   padding: 28px 40px 18px 40px;
   display: flex;
   align-items: flex-start;
-  min-width: 340px;
+  min-width: 0;
   max-width: 720px;
   width: 100%;
   margin: 22px auto;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
 }
-
 .x-left, .x-right {
   position: absolute;
   top: 18px;
@@ -78,7 +80,6 @@
   grid-template-rows: auto auto;
   gap: 8px 32px;
 }
-
 .recuadro {
   padding: 0 8px;
   text-align: center;
@@ -103,6 +104,7 @@
   font-size: 20px;
 }
 
+/* ----------- CELULAR ROW ----------- */
 .celular-row {
   margin-top: 20px;
   align-items: center;
@@ -128,49 +130,55 @@
   align-items: start;
 }
 
-/* Tablets (max 990px): ajusta grids, cartas, texto y recuadros */
+/* ----------- RESPONSIVE: TABLETS ----------- */
 @media (max-width: 990px) {
   .datos-impacto-section {
     padding: 80px 0 24px 0;
     background-size: cover;
   }
   .cartas-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
-    gap: 13px 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 12px;
+    max-width: 98vw;
   }
   .carta img {
-    max-width: 340px;
-    border-radius: 11px;
+    max-width: 210px;
   }
   .cartas-info-text {
-    font-size: 19px;
+    font-size: 20px;
     padding: 7px 9px;
-    max-width: 400px;
+    max-width: 95vw;
   }
   .info-blanca {
-    padding: 20px 10px 12px 10px;
-    max-width: 430px;
+    flex-direction: column;
+    align-items: center;
+    padding: 18px 6vw 12px 6vw;
+    max-width: 97%;
     min-width: 0;
   }
   .x-left, .x-right {
-    top: 7px;
-    width: 36px;
-    height: 36px;
+    position: relative;
+    top: unset;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    right: 0;
+    margin: 0 auto 10px auto;
+    display: block;
   }
-  .x-left { left: -18px; }
-  .x-right { right: -18px; }
   .info-blanca-content {
-    padding: 0 4px;
+    padding: 0 3px;
   }
   .info-blanca-grid {
-    gap: 6px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
   }
   .recuadro-title {
     font-size: 16px;
   }
   .recuadro-text, .recuadro.abajo {
-    font-size: 12px;
+    font-size: 13px;
   }
   .celular-row {
     flex-direction: column;
@@ -179,47 +187,54 @@
   }
   .celular-title, .celular-list {
     margin-left: 0;
-    font-size: 16px;
+    font-size: 15px;
     padding-left: 2px;
   }
   .celular-img img {
-    max-width: 230px;
+    max-width: 180px;
     margin: 0 auto;
   }
 }
 
-/* MOBILE - reduce paddings, fuentes, layout */
-@media (max-width: 600px) {
+/* ----------- MOBILE: MANTENER DOS COLUMNAS ----------- */
+@media (max-width: 650px) {
   .datos-impacto-section {
-    padding: 38px 0 14px 0;
-    background-size: 300%;
+    padding: 70px 0 12px 0;
+    background-size: 320%;
   }
-  .cartas-info-text {
-    font-size: 12px;
-    padding: 4px 4px;
-    max-width: 94vw;
+  .cartas-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 7px;
+    max-width: 100%;
   }
   .carta img {
-    max-width: 98vw;
+    max-width: 44vw;
+    min-width: 0;
+  }
+  .cartas-info-text {
+    font-size: 13px;
+    padding: 4px 4px;
+    max-width: 100%;
   }
   .info-blanca {
-    padding: 7px 1vw 7px 1vw;
-    max-width: 99vw;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 1vw 8px 1vw;
+    max-width: 100%;
     min-width: 0;
   }
   .x-left, .x-right {
-    top: 2px;
     width: 18px;
     height: 18px;
-    left: -9px;
-    right: -9px;
+    margin: 0 auto 2px auto;
   }
   .info-blanca-content {
     padding: 0 1px;
   }
   .info-blanca-grid {
-    gap: 2px 2px;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 6px 0;
   }
   .recuadro-title, .recuadro-text, .recuadro.abajo {
     font-size: 10px;
@@ -228,19 +243,24 @@
     flex-direction: column;
     align-items: stretch;
     margin-top: 8px;
+    
   }
   .celular-title {
-    font-size: 13px;
-    margin-bottom: 6px;
-    margin-left: 0;
+    font-size: 20px;
+    text-align: center;
   }
   .celular-list {
     font-size: 10px;
     margin-left: 0;
-    padding-left: 4px;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 40px;
+ 
   }
   .celular-img img {
-    max-width: 80vw;
+    max-width: 50%;
     margin: 0 auto;
   }
 }
+
+
