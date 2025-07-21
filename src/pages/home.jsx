@@ -2,6 +2,7 @@ import { InteligenciaAnalisis } from '../sections/analisisp1';
 import { Bot } from '../sections/bot';
 import { Comunicacion } from '../sections/comunicacion';
 import { DatosImpacto } from '../sections/datosImpacto';
+import { Footer } from '../sections/footer';
 import { HacerConNova } from '../sections/hacerConNova';
 import { Hero } from '../sections/hero';
 import { ProblemasSector } from '../sections/probelmasSector';
@@ -16,6 +17,8 @@ export function Home() {
       <DatosImpacto/>
       <Bot/>
       <Comunicacion/>
+      <Footer/>
+      
 
     </>
   );
