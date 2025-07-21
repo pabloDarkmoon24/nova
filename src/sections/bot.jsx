@@ -1,5 +1,5 @@
 import '../styles/bot.css'
-import imgManoCelular from '../assets/bot/_Chat-bot-con-IA.png'
+import imgManoCelular from '../assets/bot/bot-con-IA.png'
 import imgLaptopNube from '../assets/bot/gestion-documental.png'
 
 export function Bot() {
@@ -9,7 +9,7 @@ export function Bot() {
                 <div className="row align-items-center">
                 <div className="col-6 seccion-gestion-col">
                     <div className="seccion-gestion-imgbox imgbox-izq">
-                    <img src={imgManoCelular} alt="" className="img-mano-celular" />
+                    <img src={imgManoCelular} alt="" className="mano-celular" />
                     </div>
                     <div className="seccion-gestion-texto gestion-texto-izq">
                     <div className="gestion-titulo">

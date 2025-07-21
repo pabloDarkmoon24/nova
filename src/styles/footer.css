@@ -1,10 +1,10 @@
 .footer-section {
   position: relative;
-  width: 100vw;
+  width: 100%;
   min-height: 320px;
   color: #fff;
-  overflow: hidden;
   background: #181733;
+  overflow: hidden;
   padding-top: 38px;
   padding-bottom: 36px;
 }
@@ -24,58 +24,22 @@
 }
 
 .footer-logo {
-  width: 156px;
+  width: 200px;
   margin-bottom: 18px;
+  margin-top: 30px;
 }
 
 .footer-desc {
-  font-size: 1.09rem;
+  font-size: 20px;
   line-height: 1.36;
   margin-bottom: 28px;
   color: #fff;
 }
 
-.footer-form {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  max-width: 320px;
-  margin-bottom: 18px;
-}
-
-.footer-form input {
-  flex: 1;
-  border: none;
-  padding: 11px 14px;
-  font-size: 1rem;
-  outline: none;
-  border-radius: 0;
-  background: transparent;
-}
-
-.footer-form button {
-  background: linear-gradient(90deg, #d124e4, #fd536b, #ffb700);
-  border: none;
-  width: 46px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0 8px 8px 0;
-  cursor: pointer;
-}
-
-.footer-form img {
-  width: 28px;
-  height: 28px;
-}
-
-/* Enlaces y contacto */
 .footer-title {
+  margin-top: 30px;
   font-weight: 700;
-  font-size: 1.17rem;
+  font-size: 25px;
   margin-bottom: 18px;
 }
 
@@ -98,36 +62,86 @@
 .footer-contact-item {
   margin-bottom: 18px;
   color: #fff;
-  font-size: 1.07rem;
+  font-size: 18px;
 }
-
 .footer-contact-icon {
   margin-right: 8px;
-  font-size: 1.15rem;
+  font-size: 18px;
+}
+
+/* SOPORTE BOX */
+.soporte-box-absolute {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;  /* (si quieres que el box flote justo arriba del footer, deja relative y pon margin-bottom negativo) */
+  z-index: 10;
+  margin-top: 60px;
+  margin-bottom: -80px;
+  pointer-events: none;
+}
+.soporte-box {
+  background: #23213a;
+  border-radius: 30px;
+  box-shadow: 0 12px 48px #27205b25;
+  padding: 34px 48px 24px 44px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  min-width: 640px;
+  max-width: 860px;
+  width: fit-content;
+  margin: 0 auto;
+  position: relative;
+  top: -38px;
+  pointer-events: auto;
+}
+.soporte-box-title {
+  color: #fff;
+  font-size: 33px;
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: 0.01em;
+}
+.soporte-box-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
+}
+.soporte-box-phone {
+  padding: 9px 28px 9px 24px;
+  border-radius: 28px;
+  background: linear-gradient(90deg, #a359db 0%, #fd536b 60%, #ffb700 100%);
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  box-shadow: 0 4px 28px #ff3e9944;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.soporte-box-link {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 45px;
 }
 
 /* Responsive */
 @media (max-width: 1100px) {
-  .footer-desc, .footer-form { max-width: 260px; }
+  .footer-desc { max-width: 260px; }
 }
-
 @media (max-width: 900px) {
   .footer-section { padding: 32px 0 18px 0; }
   .footer-logo { width: 118px; }
   .footer-title { font-size: 1.04rem; }
-  .footer-form input { font-size: 0.94rem; }
-  .footer-form img { width: 20px; }
 }
-
 @media (max-width: 720px) {
-  .footer-container .row {
-    flex-direction: column;
-    gap: 32px;
-  }
-  .footer-section {
-    min-height: 440px;
-  }
-  .footer-title {
-    margin-top: 22px;
-  }
+  .footer-container .row { flex-direction: column; gap: 32px; }
+  .footer-section { min-height: 440px; }
+  .footer-title { margin-top: 22px; }
+  .soporte-box { flex-direction: column; min-width: 0; width: 90vw; gap: 20px; padding: 24px 10px; }
+  .soporte-box-title { font-size: 20px; }
+  .soporte-box-phone { font-size: 16px; padding: 7px 16px; }
+  .soporte-box-link { font-size: 15px; margin-right: 0; }
 }
