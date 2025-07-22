@@ -1,102 +1,148 @@
 .seccion-gestion {
   background: url('../assets/bot/BG-morado.png') no-repeat center center/cover;
-  padding: 0 0 50px 0;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* FLEX ROW SIEMPRE HASTA CELULAR PEQUEÑO */
+.row.align-items-center {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  align-items: center;
+}
+
 .seccion-gestion-col {
   display: flex;
   flex-direction: row;
-  gap: 32px;
-  align-items: stretch;    /* Ambos lados ocupan mismo alto */
+  align-items: center;
   justify-content: center;
   width: 100%;
+  gap: 50px;
 }
 
-/* Ajusta los contenedores para que no se achiquen demasiado */
-.seccion-gestion-imgbox.imgbox-izq,
-.seccion-gestion-imgbox.imgbox-der {
-  width: 45%;       /* Un poco menos de 50% para dar espacio al texto */
+.seccion-gestion-imgbox {
+  flex: 1 1 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-end;
-  min-width: 180px;
+  min-width: 600px;
 }
-.seccion-gestion-imgbox.imgbox-der { justify-content: flex-start; }
+.imgbox-izq { justify-content: flex-end; }
+.imgbox-der { justify-content: flex-start; }
 
-.gestion-texto-izq, .gestion-texto-der {
-  width: 55%;
-  min-width: 220px;
-  max-width: 480px;
+.seccion-gestion-texto {
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 24px;
+  min-width: 600px;
+  max-width: 700px;
+  padding: 0 18px;
+}
+.gestion-texto-izq { 
+  align-items: flex-start; 
+  text-align: left;  
+  margin-left: 100px;
+}
+.gestion-texto-der { 
+  align-items: flex-start; 
+  text-align: left;  
+  margin-right: 100px;
 }
 
-.gestion-texto-izq {
-  align-items: flex-start;
-  text-align: left;
-  color: #000;
-}
-.gestion-texto-der {
-  align-items: flex-start;
-  text-align: left;
-  color: #fff;
-}
-
-.img-mano-celular {
-  max-width: 370px;
+.img-mano-celular{
   width: 100%;
-  margin-bottom: 12px;
+  max-width: 500px;
 }
+
 .img-laptop-nube {
-  max-width: 340px;
   width: 100%;
-  margin-bottom: 12px;
+  max-width: 500px;
 }
 
 .gestion-titulo {
-  font-family: 'MONT-BOLD';
-  font-weight: 700;
+  font-family: 'MONT-BOLD', sans-serif;
+  font-weight: 800;
   font-size: 30px;
-  margin-bottom: 8px;
-  color: #fff;
+  margin-bottom: 10px;
+  color: white;
 }
 .gestion-desc {
-  font-family: 'MONT-REGULAR';
-  font-size: 25px;
-  line-height: 1.26;
-  color: #fff;
+  font-family: 'MONT-REGULAR', sans-serif;
+  font-size: 20px;
+  line-height: 1.38;
+  color: white;
 }
 
-/* ----------- TABLET ----------- */
-@media (max-width: 1000px) {
-  .seccion-gestion-col { gap: 12px; }
-  .seccion-gestion-imgbox.imgbox-izq,
-  .seccion-gestion-imgbox.imgbox-der { width: 42%; min-width: 140px; }
+/* TABLET: Reduce proporciones pero mantiene dos columnas */
+@media (max-width: 1400px) {
+  .seccion-gestion {
+    padding: 38px 0 28px 0;
+  }
+  .seccion-gestion-col {
+    gap: 16px;
+    min-height: 200px;
+  }
+  .seccion-gestion-imgbox {
+    max-width: 260px;
+    min-width: 80px;
+  }
+  .seccion-gestion-texto {
+    max-width: 340px;
+    min-width: 80px;
+    padding: 0 6px;
+  }
   .gestion-texto-izq, .gestion-texto-der {
-    width: 58%;
-    max-width: 370px;
-    min-width: 120px;
-    padding: 0 8px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
   .img-mano-celular, .img-laptop-nube { max-width: 180px; }
   .gestion-titulo { font-size: 18px; }
   .gestion-desc { font-size: 13px; }
 }
 
-
-@media (max-width: 700px) {
-  .seccion-gestion-imgbox.imgbox-izq,
-  .seccion-gestion-imgbox.imgbox-der { width: 40%; min-width: 80px;margin-top: 10px}
-  .gestion-texto-izq, .gestion-texto-der { width: 62%; max-width: 100%; margin-top: 20px}
-  .img-mano-celular, .img-laptop-nube { max-width: 150px; }
-  .gestion-titulo { font-size: 12px }
-  .gestion-desc { font-size: 9px; }
+/* CELULAR: Mantener dos columnas mientras se pueda */
+@media (max-width: 800px) {
+  .seccion-gestion-col {
+    gap: 7px;
+    min-height: 110px;
+  }
+  .seccion-gestion-imgbox {
+    max-width: 95vw;
+    min-width: 60px;
+  }
+  .seccion-gestion-texto {
+    max-width: 95vw;
+    min-width: 60px;
+    padding: 0 2vw;
+  }
+  .gestion-titulo { font-size: 13px; }
+  .gestion-desc { font-size: 10px; }
 }
 
+/* MOBILE PEQUEÑO: Ya no caben dos columnas, apilar */
+@media (max-width: 520px) {
+  .row.align-items-center {
+    gap: 20px;
+  }
+  .seccion-gestion-col {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 60px;
+  }
+  .seccion-gestion-imgbox,
+  .seccion-gestion-texto {
+    max-width: 99vw;
+    min-width: 0;
+    margin: 0;
+    padding: 0 2vw;
+  }
+  .gestion-titulo { font-size: 11px; }
+  .gestion-desc { font-size: 8px; }
+}
 
 

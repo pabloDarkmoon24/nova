@@ -1,0 +1,125 @@
+.contacto-main {
+  background: #f8f6ff;
+  min-height: 100vh;
+}
+
+/* HERO */
+.contacto-hero {
+  width: 100vw;
+  background: linear-gradient(180deg, #171749 0%, #181633 100%);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.contacto-hero-content {
+  text-align: center;
+  z-index: 2;
+}
+.contacto-hero h1 {
+  color: #fff;
+  font-size: 58px;
+  font-family: 'MONT-BOLD', sans-serif;
+  margin-bottom: 7px;
+}
+.contacto-breadcrumb {
+  color: #fff;
+  font-size: 20px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.contacto-breadcrumb-sep { margin: 0 5px; }
+
+/* CARDS SECTION */
+.contacto-cards-section {
+  background: #f8f6ff;
+  padding: 54px 0 80px 0;
+}
+.contacto-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 38px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.contacto-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 18px #7b4cfb12;
+  padding: 48px 20px 38px 20px;
+  text-align: center;
+  transition: box-shadow 0.22s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contacto-card:hover {
+  box-shadow: 0 10px 32px #7b4cfb1c;
+  transform: translateY(-8px) scale(1.035);
+}
+
+.contacto-icon {
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 18px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 5px 18px #7b4cfb45);
+}
+.contacto-card-title {
+  font-family: 'MONT-BOLD', sans-serif;
+  font-size: 1.4rem;
+  color: #3b277d;
+  margin-bottom: 7px;
+  font-weight: 800;
+}
+.contacto-card-desc {
+  color: #4d4c65;
+  font-size: 1.04rem;
+  font-family: 'MONT-REGULAR', sans-serif;
+  margin-bottom: 13px;
+}
+.contacto-card-data {
+  font-size: 1.12rem;
+  color: #231b47;
+  font-family: 'MONT-BOLD', sans-serif;
+}
+.contacto-card-email {
+  font-weight: 700;
+  color: #2d166d;
+  margin-top: 10px;
+}
+.contacto-card-phone {
+  font-weight: 700;
+  color: #2d166d;
+  margin-top: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .contacto-hero h1 { font-size: 38px; }
+  .contacto-cards-grid { gap: 16px; padding: 0 10px; }
+  .contacto-card { padding: 30px 8px 24px 8px; }
+}
+
+@media (max-width: 900px) {
+  .contacto-cards-grid { grid-template-columns: 1fr; gap: 24px; }
+  .contacto-card { max-width: 420px; margin: 0 auto; }
+}
+
+@media (max-width: 600px) {
+  .contacto-hero { min-height: 110px; }
+  .contacto-hero h1 { font-size: 24px; }
+  .contacto-breadcrumb { font-size: 11px; }
+  .contacto-cards-section { padding: 18px 0 26px 0; }
+  .contacto-cards-grid { gap: 13px; padding: 0 2vw; }
+  .contacto-card { padding: 19px 3vw 15px 3vw; }
+  .contacto-card-title { font-size: 1.06rem; }
+  .contacto-card-desc, .contacto-card-data { font-size: 0.92rem; }
+  .contacto-icon { width: 54px; height: 54px; margin-bottom: 9px; }
+}
