@@ -9,21 +9,21 @@ export function Comunicacion() {
         <section className="seccion-mensajes">
             <div className="container">
                 {/* Fila principal: PC y texto, dos columnas */}
-                <div className="row align-items-center">
-                <div className="col-6 mensajes-textos">
-                    <div className="mensajes-titulo">
-                    Comunicación rápida,<br />
-                    clara y sin interrupciones
+                <div className="row mensajes-row">
+                    <div className="mensajes-textos">
+                        <div className="mensajes-titulo">
+                        Comunicación rápida,<br />
+                        clara y sin interrupciones
+                        </div>
+                        <div className="mensajes-desc">
+                        Integramos <b>Whatsapp, Telegram, SMS, Email, Instagram y Facebook.</b><br /><br />
+                        Mantén la comunicación con tus clientes <b>en un mismo sitio</b>, y no te pierdas nunca más un mensaje.
+                        </div>
                     </div>
-                    <div className="mensajes-desc">
-                    integramos <b>Whatsapp, Telegram, SMS, Email, Instagram y Facebook.</b><br /><br />
-                    Mantén la comunicación con tus clientes <b>en un mismo sitio</b>, y no te pierdas nunca más un mensaje.
+                    <div className="mensajes-pc-img-area">
+                        <img src={imgPCMensajeria} alt="Mensajería" className="mensajes-pc-img" />
                     </div>
-                </div>
-                <div className="col-6 mensajes-pc-img-area">
-                    <img src={imgPCMensajeria} alt="Mensajería" className="mensajes-pc-img" />
-                </div>
-                </div>
+                    </div>
 
                 {/* Tarjetas de mensajes */}
                 <div className="row justify-content-center mt-3">
@@ -43,4 +43,4 @@ export function Comunicacion() {
             </section>
     )
     
-}
+} 

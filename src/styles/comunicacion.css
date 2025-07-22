@@ -1,68 +1,80 @@
-/* --- BASE: Tu estilo original, mantén esto --- */
 .seccion-mensajes {
-  padding: 38px 0 0 0;
   background: #fff;
-  width: 100vw;
+  padding: 38px 0 0 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Fila principal: textos y PC */
-.mensajes-textos {
+/* ---- Fila principal: SIEMPRE dos columnas hasta móvil pequeño ---- */
+.mensajes-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  gap: 16px;
-  padding-right: 20px;
-}
-
-.mensajes-titulo {
-  font-family: 'MONT-BOLD';
-  font-size: 35px;
-  font-weight: 800;
-  color: #181829;
-  margin-bottom: 10px;
-  line-height: 1.13;
-  margin-left: 170px;
-}
-
-.mensajes-desc {
-  font-family: 'MONT-REGULAR';
-  color: #222;
-  font-size: 25px;
-  margin-bottom: 0;
-  line-height: 1.28;
-  margin-left: 170px;
-}
-
-.mensajes-pc-img-area {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-}
-
-.mensajes-pc-img {
-  max-width: 500px;
-  width: 100%;
-  margin-right: 144px;
-}
-
-.mensajes-card-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1000px;
-  width: 100%;
-  margin-bottom: 12px;
-}
-
-.demo-img-box {
-  margin-top: 38px;
-  text-align: center;
-}
-.demo-img {
+  gap: 30px;
   width: 100%;
   max-width: 1300px;
   margin: 0 auto;
+}
+
+.mensajes-textos {
+  flex: 1 1 0;
+  min-width: 280px;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0;
+}
+
+.mensajes-titulo {
+  font-family: 'MONT-BOLD', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #181829;
+  line-height: 1.13;
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+
+.mensajes-desc {
+  font-family: 'MONT-REGULAR', sans-serif;
+  color: #222;
+  font-size: 1.3rem;
+  line-height: 1.28;
+  margin: 0;
+  text-align: left;
+}
+
+.mensajes-pc-img-area {
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 480px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mensajes-pc-img {
+  width: 100%;
+  max-width: 430px;
+  min-width: 130px;
   display: block;
+  margin: 0;
+}
+
+/* Tarjetas y demo box */
+.mensajes-card-img, .demo-img {
+  display: block;
+  max-width: 900px;
+  width: 100%;
+  margin: 20px auto 0 auto;
+}
+
+.demo-img-box {
+  text-align: center;
 }
 
 /* --- RESPONSIVE --- */
