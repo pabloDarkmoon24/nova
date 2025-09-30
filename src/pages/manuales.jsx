@@ -1,21 +1,19 @@
-import React from 'react';
-import { useState } from 'react';
-import '../styles/manuales.css'; // tu archivo de estilos
-import { Footer } from '../components/footer';
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/manuales.css";
+import { Footer } from "../components/footer";
 
-// Componente simple de acordeón
+// Acordeón simple para otros ítems
 function ManualAccordion({ pregunta, respuesta }) {
   const [open, setOpen] = React.useState(false);
   return (
-    <div className={`manual-acordeon ${open ? 'open' : ''}`}>
+    <div className={`manual-acordeon ${open ? "open" : ""}`}>
       <button className="manual-pregunta" onClick={() => setOpen(!open)}>
-        <span className="manual-icon">
-          <svg height="28" viewBox="0 0 24 24" fill="#7b4cfb"><circle cx="12" cy="12" r="12"/><text x="8" y="17" fontSize="13" fill="#fff">?</text></svg>
-        </span>
+        <span className="manual-icon">❓</span>
         <span className="manual-text">{pregunta}</span>
-        <span className="manual-toggle">{open ? '−' : '+'}</span>
+        <span className="manual-toggle">{open ? "−" : "+"}</span>
       </button>
-      <div className="manual-respuesta" style={{ display: open ? 'block' : 'none' }}>
+      <div className="manual-respuesta" style={{ display: open ? "block" : "none" }}>
         {respuesta}
       </div>
     </div>
@@ -30,11 +28,10 @@ export function ManualPage() {
           <h1>Ayuda</h1>
           <div className="ayuda-breadcrumb">
             <span>Inicio</span>
-            <span className="ayuda-breadcrumb-sep">{'»'}</span>
+            <span className="ayuda-breadcrumb-sep">»</span>
             <span>Ayuda</span>
           </div>
         </div>
-        {/* Aquí puedes colocar los SVG decorativos si quieres */}
       </section>
 
       <section className="ayuda-manuales-section">
@@ -42,26 +39,65 @@ export function ManualPage() {
           <span className="ayuda-titulo-principal">AYUDA</span>
           <span> – Manuales</span>
         </h2>
-        <p className="ayuda-subtitle">
-          Encuentra los manuales para el uso de nuestra herramienta
-        </p>
+        <p className="ayuda-subtitle">Encuentra los manuales para el uso de nuestra herramienta</p>
+
         <div className="ayuda-manuales-list">
-          <ManualAccordion
-            pregunta="Primeros pasos"
-            respuesta="Aquí irá el contenido de primeros pasos..."
-          />
+          {/* Tarjeta existente */}
+          <Link to="/nova/manuales/primeros-pasos" className="manual-link-card">
+            <div className="mlc-left">
+              <div className="mlc-icon">📘</div>
+              <div>
+                <div className="mlc-title">Primeros pasos</div>
+                <div className="mlc-desc">Infografía + guía paso a paso para migrar a NOVA.</div>
+              </div>
+            </div>
+            <div className="mlc-arrow">→</div>
+          </Link>
+
+          {/* NOVA (presentación general) */}
+          <Link to="/nova/manuales/nova" className="manual-link-card">
+            <div className="mlc-left">
+              <div className="mlc-icon">🎬</div>
+              <div>
+                <div className="mlc-title">De dónde nace NOVA</div>
+                <div className="mlc-desc">Conoce qué es NOVA.</div>
+              </div>
+            </div>
+            <div className="mlc-arrow">→</div>
+          </Link>
+
+          {/* ✅ NUEVO: NOVA CRECE */}
+          <Link to="/nova/manuales/Migracion" className="manual-link-card">
+            <div className="mlc-left">
+              <div className="mlc-icon">🚀</div>
+              <div>
+                <div className="mlc-title">Migracion de clientes</div>
+                <div className="mlc-desc">Proceso de Migracion</div>
+              </div>
+            </div>
+            <div className="mlc-arrow">→</div>
+          </Link>
+          
+          <Link to="/nova/manuales/asistente-ia" className="manual-link-card">
+            <div className="mlc-left">
+              <div className="mlc-icon">🤖</div>
+              <div>
+                <div className="mlc-title">Asistente de IA de NOVA</div>
+                <div className="mlc-desc">Soporte técnico y asesor comercial 24/7.</div>
+              </div>
+            </div>
+            <div className="mlc-arrow">→</div>
+          </Link>
+
+          {/* Otros como acordeón */}
           <ManualAccordion
             pregunta="¿Cuáles son los medios de pago?"
             respuesta="Aquí irá la información sobre medios de pago..."
           />
-          {/* Agrega más ManualAccordion según tus manuales */}
         </div>
       </section>
-      <Footer/>
+
+      <Footer />
     </div>
-    
   );
 }
-
-
-

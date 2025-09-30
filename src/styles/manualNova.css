@@ -1,0 +1,197 @@
+/* ===== Manual NOVA (solo esta página) ===== */
+:root {
+  --nova-grad: linear-gradient(135deg,#7a2cff,#ff4dbc 45%,#ffb700);
+  --nova-ink: #1f2240;
+}
+
+/* Contenedor general */
+.nova-article {
+  background: #f8f6ff;
+  padding: 28px 16px 48px;
+}
+
+/* Ancho y una sola columna */
+.nova-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Título */
+.nova-title {
+  font-family: 'MONT-BOLD', sans-serif;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #2a2766;
+  letter-spacing: .2px;
+  margin: 0 0 18px;
+}
+
+/* Figura / video */
+.nova-figure { margin: 0 0 22px; }
+
+/* Wrapper del video con overlay y botón */
+.nova-video-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--nova-grad);
+  box-shadow: 0 20px 44px rgba(17,12,46,.20);
+  aspect-ratio: 16 / 9;
+}
+
+/* Video */
+.nova-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #111432;
+}
+
+/* Capa de color/vidriado previa a reproducir */
+
+/* Botón de reproducir */
+.nova-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 86px;
+  height: 86px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: var(--nova-grad);
+  box-shadow: 0 14px 34px rgba(122,44,255,.36);
+  display: grid;
+  place-items: center;
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.nova-play:hover {
+  transform: translate(-50%, -50%) scale(1.04);
+  box-shadow: 0 18px 46px rgba(122,44,255,.42);
+}
+
+/* Figcaption */
+.nova-figcaption {
+  margin-top: 10px;
+  font-family: 'MONT-REGULAR', sans-serif;
+  font-size: 13px;
+  color: #666a8a;
+}
+
+/* ===== Texto / lectura agradable ===== */
+.nova-content {
+  font-family: 'MONT-REGULAR', sans-serif;
+  color: var(--nova-ink);
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: .15px;
+  max-width: 860px;         /* ancho óptimo para lectura */
+  margin: 0 auto;           /* centrado dentro del wrap */
+}
+
+.nova-content p { margin: 12px 0 14px; }
+
+.nova-content h3 {
+  font-family: 'MONT-BOLD', sans-serif;
+  color: #2a2766;
+  font-size: 22px;
+  margin: 28px 0 12px;
+  position: relative;
+  letter-spacing: .2px;
+}
+.nova-content h3::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -6px;
+  width: 56px; height: 3px;
+  background: var(--nova-grad);
+  border-radius: 2px;
+}
+
+/* Listas con viñeta “brand” */
+.nova-content ul {
+  list-style: none;
+  margin: 10px 0 16px 0;
+  padding-left: 0;
+}
+.nova-content ul li {
+  position: relative;
+  padding-left: 22px;
+  margin: 10px 0;
+  line-height: 1.7;
+}
+.nova-content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .78em;
+  width: 10px; height: 10px;
+  border-radius: 3px;
+  background: var(--nova-grad);
+  transform: translateY(-50%);
+  box-shadow: 0 2px 6px rgba(122,44,255,.35);
+}
+
+/* Lista numerada con número destacado */
+.nova-content ol {
+  counter-reset: item;
+  margin: 12px 0 18px 0;
+  padding-left: 0;
+}
+.nova-content ol li {
+  counter-increment: item;
+  position: relative;
+  margin: 12px 0;
+  padding-left: 34px;
+  line-height: 1.7;
+}
+.nova-content ol li::before {
+  content: counter(item) ".";
+  position: absolute;
+  left: 0; top: 0;
+  font-family: 'MONT-BOLD', sans-serif;
+  color: #6e51ff;
+}
+
+/* Énfasis */
+.nova-content strong { color: #1a1d3a; font-weight: 800; }
+.nova-content em     { color: #4b4692; font-style: normal; font-weight: 600; }
+
+/* Nota */
+.nova-note {
+  background: #f7f4ff;
+  border: 1px solid #ebe4ff;
+  color: #4137b8;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 18px rgba(122,44,255,.06);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.nova-note::before {
+  content: "💡";
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Acciones */
+.nova-actions { margin-top: 18px; }
+.nova-back {
+  text-decoration: none;
+  color: #7b4cfb;
+  font-weight: 700;
+}
+.nova-back:hover { text-decoration: underline; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .nova-title  { font-size: 26px; }
+  .nova-article { padding: 22px 12px 36px; }
+  .nova-play   { width: 72px; height: 72px; }
+  .nova-content { font-size: 16px; }
+}

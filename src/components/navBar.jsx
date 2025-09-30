@@ -49,20 +49,22 @@ function Navbar() {
                   to="/nova/contacto"
                   className={location.pathname === '/nova/contacto' ? 'active' : ''}
                   onClick={closeMenu}
-                >Contactamos</Link>
+                >Contactanos</Link>
               </li>
               {/* Botón Prueba Gratuita en móvil */}
               <li className="navbar-menu-btn-mobile">
-                <a href="#">
-                  <img src={btngratuita} alt="Prueba Gratuita" className="navbar-btn-mobile-img"/>
-                </a>
-              </li>
+              <a href="#registro-nova" onClick={() => setMenuOpen(false)}>
+                <img src={btngratuita} alt="Prueba Gratuita" className="navbar-btn-mobile-img" />
+              </a>
+            </li>
             </ul>
           </div>
           {/* Botón Prueba Gratuita (solo visible en desktop) */}
-          <div className="col-3 navbar-right">
-            <a href="#"><img src={btngratuita} alt="Prueba Gratuita" /></a>
-          </div>
+         <div className="col-3 navbar-right">
+          <Link to="/nova/registro" onClick={() => setMenuOpen(false)}>
+            <img src={btngratuita} alt="Prueba Gratuita" />
+          </Link>
+        </div>
         </div>
       </div>
     </nav>
