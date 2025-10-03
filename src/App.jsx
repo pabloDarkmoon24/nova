@@ -13,6 +13,8 @@ import { NovaManualPage } from "./pages/manuales/nova";
 import { PrimerosPasosPage } from "./pages/manuales/PrimerosPasos";
 import { NovaManualGrowPage } from "./pages/manuales/migracion";
 import { AsistenteIaManualPage } from "./pages/manuales/IadeNova";
+import { CortesAutoManualPage } from "./pages/manuales/automatizacion-cortes";
+import { MetricsManualPage } from "./pages/manuales/metricas-dashboard";
 
 function MotionWrap({ children }) {
   return (
@@ -82,6 +84,29 @@ function AnimatedRoutes() {
             </motion.div>
           }
         />
+        <Route
+        path="nova/manuales/automatizacion-cortes"
+        element={
+          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -40 }} transition={{ duration: 0.4 }}>
+            <CortesAutoManualPage />
+          </motion.div>
+        }
+      />
+
+      <Route
+        path="nova/manuales/metricas-dashboard"
+        element={
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -40 }}
+            transition={{ duration: 0.4 }}
+          >
+            <MetricsManualPage />
+          </motion.div>
+        }
+      />
+
         <Route
           path="nova/registro"
           element={

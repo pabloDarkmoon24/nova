@@ -77,51 +77,72 @@
   text-align: center;
 }
 
-/* --- RESPONSIVE --- */
+/* ================== BREAKPOINTS ================== */
 
-/* Tablets */
-@media (max-width: 1100px) {
-  .mensajes-titulo,
-  .mensajes-desc {
-    margin-left: 40px;
-    font-size: 22px;
+/* Laptop/Tablet grande */
+@media (max-width: 1200px){
+  .mensajes-row{
+    grid-template-columns: minmax(300px, 1fr) minmax(260px, 1fr);
   }
-  .mensajes-desc { font-size: 15px; }
-  .mensajes-pc-img { margin-right: 30px; max-width: 330px; }
+  .mensajes-pc-img{ max-width: 480px; }
 }
 
-/* Móvil: todo columna, centrado y sin márgenes */
-@media (max-width: 700px) {
-  .mensajes-textos {
-    align-items: center;
-    padding-right: 0;
-    gap: 12px;
+/* Tablet */
+@media (max-width: 992px){
+  .mensajes-row{
+    gap: clamp(14px, 3.5vw, 28px);
+  }
+  .mensajes-pc-img{ max-width: 440px; }
+}
+
+/* Móvil: 1 columna, todo centrado, texto más pequeño */
+@media (max-width: 700px){
+  .mensajes-row{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .mensajes-textos{
+    align-items:center;
+    text-align:center;
+    padding-inline:12px;
+    gap:10px;
   }
   .mensajes-titulo{
-    margin-left: 0;
-    text-align: center;
-    font-size: 23px;
+    text-align:center;
+    font-size: clamp(18px, 5.2vw, 24px);
+    line-height:1.2;
+    letter-spacing:-.3px;
+    margin:0 0 6px 0;
   }
-  .mensajes-desc {
-    margin-left: 0;
-    text-align: center;
-    font-size: 13px;
+  .mensajes-desc{
+    text-align:center;
+    font-size: clamp(12.5px, 3.8vw, 15px);
+    line-height:1.5;
+    max-width: 42ch;
+    margin:0 auto;
+    opacity:.95;
+    text-wrap: pretty;
+    overflow-wrap: anywhere;
   }
-  .mensajes-pc-img-area {
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    
+  .mensajes-pc-img{
+    max-width: min(520px, 92vw);
+    margin:14px auto 0;
   }
-  .mensajes-pc-img {
-    margin: 14px auto 0 auto;
-    max-width: 70%;
-    display: block;
-  }
-  .mensajes-card-img {
+  .mensajes-card-img{
     max-width: 99vw;
-    margin-bottom: 8px;
+    margin-bottom:8px;
   }
-  .demo-img-box { margin-top: 20px; }
-  .demo-img { max-width: 99vw; }
+  .demo-img-box{ margin-top:20px; }
+  .demo-img{ max-width: 99vw; }
+}
+
+/* Móvil pequeño extra */
+@media (max-width: 360px){
+  .mensajes-titulo{ font-size: 18px; }
+  .mensajes-desc{ font-size: 12.5px; }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .seccion-mensajes *{ transition:none !important; }
 }

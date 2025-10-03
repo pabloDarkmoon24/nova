@@ -77,7 +77,7 @@ export function ManualPage() {
             </div>
             <div className="mlc-arrow">→</div>
           </Link>
-          
+
           <Link to="/nova/manuales/asistente-ia" className="manual-link-card">
             <div className="mlc-left">
               <div className="mlc-icon">🤖</div>
@@ -88,16 +88,32 @@ export function ManualPage() {
             </div>
             <div className="mlc-arrow">→</div>
           </Link>
+          <Link to="/nova/manuales/automatizacion-cortes" className="manual-link-card">
+          <div className="mlc-left">
+            <div className="mlc-icon">⚡</div>
+            <div>
+              <div className="mlc-title">Automatización de cortes y reconexiones</div>
+              <div className="mlc-desc">Cómo NOVA corta/reconecta servicios y reduce carga operativa.</div>
+            </div>
+          </div>
+          <div className="mlc-arrow">→</div>
+        </Link>
 
-          {/* Otros como acordeón */}
-          <ManualAccordion
-            pregunta="¿Cuáles son los medios de pago?"
-            respuesta="Aquí irá la información sobre medios de pago..."
-          />
+        <Link to="/nova/manuales/metricas-dashboard" className="manual-link-card">
+          <div className="mlc-left">
+            <div className="mlc-icon">📊</div>
+            <div>
+              <div className="mlc-title">Métricas y Dashboard</div>
+              <div className="mlc-desc">Datos en tiempo real para decisiones estratégicas.</div>
+            </div>
+          </div>
+          <div className="mlc-arrow">→</div>
+        </Link>
         </div>
       </section>
 
-      <Footer />
+      <Footer/>
     </div>
+    
   );
 }

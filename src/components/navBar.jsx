@@ -52,11 +52,16 @@ function Navbar() {
                 >Contactanos</Link>
               </li>
               {/* Botón Prueba Gratuita en móvil */}
+              {/* Botón Prueba Gratuita en móvil (con Link para evitar recarga) */}
               <li className="navbar-menu-btn-mobile">
-              <a href="#registro-nova" onClick={() => setMenuOpen(false)}>
-                <img src={btngratuita} alt="Prueba Gratuita" className="navbar-btn-mobile-img" />
-              </a>
-            </li>
+                <Link to="/nova/registro" onClick={closeMenu} aria-label="Prueba Gratuita">
+                  <img
+                    src={btngratuita}
+                    alt="Prueba Gratuita"
+                    className="navbar-btn-mobile-img"
+                  />
+                </Link>
+              </li>
             </ul>
           </div>
           {/* Botón Prueba Gratuita (solo visible en desktop) */}

@@ -1,137 +1,148 @@
-/* ========= Tokens ========= */
-:root{
-  --bg:#0f0f38;
-  --card:#ffffff;
-  --ink:#1c1c3c;
-  --muted:#6b6b8f;
-  --border:#e8e3fb;
-  --field:#f7f6ff;
-  --radius:18px;
-  --ring:#b9a8ff;
-  --ring-soft:rgba(185,168,255,.28);
-  --shadow:0 24px 60px rgba(17,12,46,.22);
-  --grad:linear-gradient(135deg,#7a2cff,#ff4dbc 45%,#ffb700);
+/* ================== Hacer con NOVA ================== */
+.hacer-nova {
+  width: 100%;
+  background: #0f0f38;
+  padding: 20px 0 32px 0;
 }
 
-/* ========= Sección / Layout ========= */
-.rn-section{ background:var(--bg); padding:48px 16px; }
-.rn-wrap{
-  max-width:1200px; margin:0 auto;
-  display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:stretch;
+/* Contenedor seguro (si no usas Bootstrap) */
+.hacer-nova .container{
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding-inline: 16px;
 }
 
-/* Panel izquierdo (texto) con borde degradado sutil */
-.rn-left{
-  border-radius:var(--radius);
-  padding:40px 36px; color:#e6e6ff;
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
+/* Titulares fluidos (mejor lectura en móvil) */
+.hacer-nova-title {
+  color: #ffffff;
+  font-size: clamp(26px, 5vw, 45px);
+  line-height: 1.1;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+  font-family: 'MONT-BOLD', sans-serif;
 }
 
-
-.rn-left-title{ font-family:'MONT-BOLD'; font-size:36px; line-height:1.15; margin:0 0 10px; color:#fff; letter-spacing:-.3px; }
-.rn-left-sub{ font-family:'MONT-REGULAR'; font-size:30px; opacity:.92; }
-
-/* Card del formulario */
-.rn-card{
-  background:var(--card); color:var(--ink);
-  border-radius:var(--radius);
-  padding:32px 30px;
-  box-shadow:var(--shadow);
-}
-.rn-title{ font-family:'MONT-BOLD'; font-size:34px; line-height:1.12; margin:0 0 8px; color:var(--ink); letter-spacing:-.2px; }
-.rn-sub{ color:var(--muted); margin:0 0 22px; }
-
-/* ========= Campos ========= */
-.rn-form{ display:flex; flex-direction:column; gap:16px; }
-.rn-field{ display:flex; flex-direction:column; gap:8px; font-size:14px; color:#404064; }
-.rn-field > span{ font-family:'MONT-REGULAR'; }
-
-.rn-field input,
-.rn-field select{
-  height:52px;
-  background:var(--field);
-  color:var(--ink);
-  border:1.6px solid var(--border);
-  border-radius:12px;
-  padding:0 16px;
-  font-size:16px;
-  outline:none;
-  transition:border-color .18s, box-shadow .18s, background-color .18s;
-  -webkit-appearance:none; appearance:none;
-}
-.rn-field input::placeholder{ color:#98a0b3; }
-.rn-field input:focus,
-.rn-field select:focus{
-  border-color:var(--ring);
-  box-shadow:0 0 0 4px var(--ring-soft);
-  background:#fff;
+.hacer-nova-subtitle {
+  color: #e2e2f7;
+  font-size: clamp(15px, 3.6vw, 30px);
+  line-height: 1.35;
+  text-align: center;
+  margin-bottom: 38px;
+  font-family: 'MONT-REGULAR', sans-serif;
 }
 
-/* Grupo con sufijo (.novaisp.co) */
-.rn-input-group{ display:flex; align-items:stretch; }
-.rn-input-group input{
-  border-top-right-radius:0; border-bottom-right-radius:0; flex:1;
-}
-.rn-suffix{
-  display:flex; align-items:center; padding:0 12px;
-  background:#f1effd; color:var(--muted);
-  border:1.6px solid var(--border);
-  border-left:0;
-  border-top-right-radius:12px; border-bottom-right-radius:12px;
-  font-size:15px; white-space:nowrap;
+/* ====== Grid de tarjetas ====== */
+.hacer-nova-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;            /* pequeño respiro entre columnas */
 }
 
-/* Botón */
-.rn-btn{
-  margin-top:6px;
-  display:inline-flex; align-items:center; justify-content:center;
-  min-height:52px; padding:0 22px;
-  border:0; border-radius:999px;
-  background:var(--grad);
-  color:#fff; font-weight:800; letter-spacing:.3px; font-size:15px;
-  cursor:pointer;
-  transition:transform .16s, box-shadow .16s, filter .16s;
-}
-.rn-btn:hover{ transform:translateY(-1.5px); box-shadow:0 12px 28px rgba(122,44,255,.35); }
-.rn-btn:active{ transform:translateY(0) scale(.99); }
-.rn-btn:disabled{ opacity:.65; cursor:default; filter:grayscale(.15); }
-
-/* Mensajes */
-.rn-msg{ padding:10px 12px; border-radius:10px; font-size:14px; }
-.rn-err{ background:#ffe9ea; color:#a01028; border:1px solid #ffc6cc; }
-.rn-ok{ background:#e8ffe9; color:#0a7a1f; border:1px solid #c7f1cc; }
-
-/* Honeypot oculto */
-.rn-hp{ position:absolute; left:-9999px; top:-9999px; height:0; width:0; opacity:0; }
-
-/* Ancla suave y margen para navbar fijo */
-html{ scroll-behavior:smooth; }
-#registro-nova{ scroll-margin-top: 90px; }
-
-/* ========= Accesibilidad / Autofill ========= */
-.rn-field input:-webkit-autofill,
-.rn-field select:-webkit-autofill{
-  -webkit-text-fill-color:var(--ink);
-  -webkit-box-shadow:0 0 0 1000px var(--field) inset;
-  transition:background-color 9999s ease-out;
+.hacer-nova-card-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 450px;         /* desktop */
 }
 
-/* ========= Responsive ========= */
-@media (max-width: 980px){
-  .rn-wrap{ grid-template-columns:1fr; gap:24px; }
-  .rn-left{ order:2; }
-  .rn-card{ order:1; }
-  .rn-logo{ width: clamp(160px, 46vw, 280px); margin-bottom:18px; }
-}
-@media (max-width: 640px){
-  .rn-section{ padding:36px 12px; }
-  .rn-left{ padding:28px; }
-  .rn-card{ padding:26px 22px; border-radius:16px; }
-  .rn-title{ font-size:28px; }
-  .rn-logo{ width:min(62%, 260px); margin-bottom:14px; }
+.hacer-nova-card-col-left  { align-items: flex-start; margin-right: 10px; }
+.hacer-nova-card-col-right { align-items: flex-start; margin-left: 10px; }
+
+.hacer-nova-card {
+  width: 400px;         /* desktop */
+  max-width: 100%;
+  border-radius: 18px;
+  transition: transform 0.24s cubic-bezier(.2,.7,.4,1.2), box-shadow 0.21s;
+  background: transparent;
+  cursor: pointer;
 }
 
-/* Reduce animaciones si el usuario lo pide */
+@media (hover: hover){
+  .hacer-nova-card:hover {
+    transform: scale(1.05) translateY(-6px);
+    box-shadow: 0 10px 40px #d124e4, 0 4px 14px #ffb700;
+    z-index: 2;
+  }
+}
+
+@media (hover: none){
+  /* Evita “saltos” en táctiles */
+  .hacer-nova-card:hover { transform: none; box-shadow: none; }
+}
+
+/* Botón imagen */
+.btn-prueba-img {
+  width: 400px;
+  max-width: 90%;
+  margin: 36px auto 0 auto;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.19s cubic-bezier(.4,1,.5,1.2), box-shadow 0.22s cubic-bezier(.2,.7,.4,1.2);
+}
+@media (hover: hover){
+  .btn-prueba-img:hover {
+    transform: scale(1.045) translateY(-2px);
+    border-radius: 10px;
+    box-shadow: 0 8px 26px #d124e4;
+  }
+}
+
+/* ================== BREAKPOINTS ================== */
+
+/* Tablet horizontal ~ laptops chicos */
+@media (max-width: 1200px){
+  .hacer-nova-card-col { width: 420px; }
+  .hacer-nova-card     { width: 380px; }
+}
+
+/* Tablet / pantallas medianas */
+@media (max-width: 992px){
+  .hacer-nova-row { gap: 16px; }
+  .hacer-nova-card-col { width: 360px; }
+  .hacer-nova-card { width: 100%; }
+}
+
+/* MÓVIL: 1 tarjeta por fila */
+@media (max-width: 768px){
+  .hacer-nova { padding: 18px 0 28px; }
+
+  /* Stacking de columnas: una debajo de la otra */
+  .hacer-nova-row {
+    flex-direction: column;
+    align-items: center;      /* centra el stack */
+    gap: 14px;
+  }
+
+  .hacer-nova-card-col {
+    width: 100%;
+    max-width: 620px;         /* ancho cómodo en móvil grande */
+    align-items: center;
+    gap: 14px;
+    margin: 0;                /* quita márgenes laterales */
+  }
+
+  /* Cada tarjeta ocupa todo el ancho del contenedor */
+  .hacer-nova-card {
+    width: 100%;
+    border-radius: 16px;
+  }
+
+  .btn-prueba-img { width: min(520px, 92%); }
+}
+
+/* Móvil pequeño */
+@media (max-width: 480px){
+  .hacer-nova { padding: 14px 0 24px; }
+  .hacer-nova-title { letter-spacing: -.5px; }
+  .hacer-nova-card  { border-radius: 14px; }
+}
+
+/* Accesibilidad: menos animaciones si el usuario lo pide */
 @media (prefers-reduced-motion: reduce){
-  *{ transition:none !important; }
+  .hacer-nova *{
+    transition: none !important;
+  }
 }
